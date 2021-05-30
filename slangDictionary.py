@@ -3,6 +3,7 @@ webSlang = ["LOL", "WYD", "IMHO", "IDK"]
 print("Choose an option to get started: ")
 print("--- Enter SEARCH to search for a word in the dictionary")
 print("--- Enter ADD to add a new word to the dictionary")
+print("--- Enter VIEW to view a list of words in the dictionary")
 print("--- Enter EXIT to exit the dictionary")
 app_start = input().lower()
 
@@ -24,6 +25,10 @@ if app_start == "search":
             print()
 elif app_start == "add":
     print("not yet an option... ")
+    print()
+elif app_start == "view":
+    for acronym in webSlang:
+        print(acronym)
     print()
 else:
     input("press any key to exit")
