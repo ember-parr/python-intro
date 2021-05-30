@@ -1,4 +1,10 @@
 import datetime
+from datetime import date
+
+import locale
+locale.setlocale(locale.LC_ALL, 'en_US')
+numFormat = locale.format("%d", 1255000, grouping=True)
+print("numFormat --> ", numFormat)
 
 # year = input('What year where you born?\n')
 # month = input('Enter your numerical birth month (ex:January input: 1)\n')
@@ -7,16 +13,25 @@ import datetime
 # input('Is this correct? (y/N) ')
 # input()
 
-date = input("Enter date in YYYY-MM-DD format\n")
-year, month, day = map(int, date.split('-'))
-date = datetime.date(year, month, day)
+user_birthday = "2011-07-26"
+# user_birthday = input("Enter birthday in YYYY-MM-DD format\n")
+year, month, day = map(int, user_birthday.split('-'))
+user_birthday = date(year, month, day)
 print()
-print("final date: ", date)
-print("year: ", year)
-print("month:", month)
+print("You entered: ", user_birthday)
 print()
 print("------------")
 print()
 
+
+
 today = date.today()
-print("today: ", today)
+
+daysOld = today - user_birthday
+daysOld = daysOld.days
+
+# days old
+formatedDaysOld = locale.format("%d", int(daysOld), grouping=True)
+print("you are", formatedDaysOld, "Days Old!")
+
+# weeks old
