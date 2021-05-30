@@ -24,6 +24,6 @@ if userGuess == computerDiceRoll and userGuess != 0:
     print("Holy Moly... You got it!")
     input()
 elif userGuess != 0 and userGuess != computerDiceRoll:
-    print("nope, better luck next time... ")
+    print("nope, computer rolled a " + str(computerDiceRoll) + " --- better luck next time... ")
 else:
     input()
