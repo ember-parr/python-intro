@@ -23,7 +23,5 @@ for i in range(months):
     elif (amount_owed < payment and amount_owed > 0):
         months_hidden = months - i - 1
         print("FINAL PAYMENT! You paid off your loan of $", round(amount_owed, 2),  sep='')
-        print("   note: ", months_hidden, " rows hidden, no payment needed", sep='')
-        amount_owed = 0
-    else:
-        exit
+        print("You paid off the loan in", i + 1, "months")
+        break
