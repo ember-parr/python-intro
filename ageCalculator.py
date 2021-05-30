@@ -10,12 +10,13 @@ from datetime import date
 # input('Is this correct? (y/N) ')
 # input()
 
-user_birthday = "2011-07-26"
-# user_birthday = input("Enter birthday in YYYY-MM-DD format\n")
+# user_birthday = "2011-07-26"
+user_birthday = input("input your birthday as YYYY-MM-DD\n")
 year, month, day = map(int, user_birthday.split('-'))
 user_birthday = date(year, month, day)
 print()
-print("You entered: ", user_birthday)
+formattedEntry = user_birthday.strftime("%A %d. %B %Y")
+print("You were born: ", formattedEntry)
 print()
 print("------------")
 print()
@@ -24,12 +25,19 @@ print()
 
 today = date.today()
 
-daysOld = today - user_birthday
-daysOld = daysOld.days
 
 # days old
+daysOld = today - user_birthday
+daysOld = daysOld.days
 formatedDaysOld = f"{daysOld:,d}"
-print("you are", formatedDaysOld, "Days Old!")
+print("You are", formatedDaysOld, "Days Old!")
 
 # weeks old
-num = 10000000
+weeksOld = int(daysOld) // 7
+weeks_days = int(daysOld) % 7
+print("You are", weeksOld, "weeks &", weeks_days, "days old")
+
+# months old
+monthsOld = today.year - user_birthday.year
+monthsOld = monthsOld * 12
+print("You are", monthsOld, "months old")
