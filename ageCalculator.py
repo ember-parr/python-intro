@@ -1,10 +1,7 @@
 import datetime
 from datetime import date
 
-import locale
-locale.setlocale(locale.LC_ALL, 'en_US')
-numFormat = locale.format("%d", 1255000, grouping=True)
-print("numFormat --> ", numFormat)
+
 
 # year = input('What year where you born?\n')
 # month = input('Enter your numerical birth month (ex:January input: 1)\n')
@@ -31,7 +28,8 @@ daysOld = today - user_birthday
 daysOld = daysOld.days
 
 # days old
-formatedDaysOld = locale.format("%d", int(daysOld), grouping=True)
+formatedDaysOld = f"{daysOld:,d}"
 print("you are", formatedDaysOld, "Days Old!")
 
 # weeks old
+num = 10000000
