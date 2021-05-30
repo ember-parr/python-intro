@@ -13,8 +13,10 @@ subtotal = sum(purchases)
 taxDue = subtotal * tax
 totalDue = subtotal + taxDue
 
-print('Subtotal: ', subtotal)
+name = input("What is your first name?\n")
+
+print('Hey, ' + name + '! Your subtotal is: ', subtotal)
 print('-- Tax: ', round(taxDue, 2))
 print('Total Due: $', round(totalDue, 2))
 
-
+input()
