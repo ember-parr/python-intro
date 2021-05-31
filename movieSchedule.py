@@ -7,11 +7,43 @@ current_movies = {
     'Sharkboy and Lavagirl': ['10:20am', "2:00pm", "4:15pm", "7:45pm"]
 }
 
+all_movies = {
+    "expiredMovies": [
+        {"name": "Jurassic Park", "rating": "pg13"},
+        {"name": "Johnny Cash", "rating": "pg"}
+    ],
+    "currentMovies": [
+        {   "name": 'When Harry Met Sally',
+            "rating": "pg13",
+            "showtimes": ['11:00am', "2:00pm"],
+            "freePopcorn": "no"
+        },
+        {   "name": 'Terminator',
+            "rating": "pg13",
+            "showtimes": ['11:00am', "2:00pm"],
+            "freePopcorn": "yes"
+        },
+        {
+            "name": "The Martian",
+            "rating": "pg",
+            "showtimes": ['11:00am', "2:00pm"],
+            "freePopcorn": "yes"
+        },
+        {
+            "name": "Battlefarce",
+            "rating": "R",
+            "showtimes": ['11:00am', "2:00pm"],
+            "freePopcorn": "no"
+        }
+    ]
+}
+
 
 print("Please choose an option:")
 print("enter [t] to see all movie titles currently playing")
 print("enter [a] to view all movie titles and their showtimes")
 print("enter [s] to search for a movie title")
+print("enter [p] to view free popcorn movie offers")
 menuChoice = input().lower()
 
 
@@ -34,6 +66,12 @@ elif menuChoice == "a":
         for time in current_movies.get(movie):
             print("   -- ", "playing at: ", time)
         print()
+elif menuChoice == "p":
+    print("\033c")
+    for movie in all_movies["currentMovies"]:
+        if (movie["freePopcorn"] == "yes"):
+            print(movie["name"])
+    input()
 else:
     print("invalid entry -- exiting program")
     sys.exit()
